@@ -16,7 +16,7 @@ spec:
     spec:
       initContainers:
         - name: parameters-pull
-          image: {{ .Values.initContainers.parameters-pull.image }}
+          image: {{ .Values.initContainers.parameters_pull.image }}
           imagePullPolicy: {{ .Values.initContainers.parameters-pull.imagePullPolicy }}
           resources:
             requests:
