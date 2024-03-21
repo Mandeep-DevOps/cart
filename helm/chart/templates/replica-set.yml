@@ -16,8 +16,8 @@ spec:
     spec:
       initContainers:
         - name: parameters-pull
-          image: docker.io/rkalluru/d77-parameter-store-init-container-image
-          imagePullPolicy: Always
+          image: {{ .Values.initContainers.parameters-pull.image }}
+          imagePullPolicy: {{ .Values.initContainers.parameters-pull.imagePullPolicy }}
           resources:
             requests:
               memory: "100Mi"
@@ -33,8 +33,8 @@ spec:
               value: {{ .Values.PARAMS }}
       containers:
         - name: {{ .Values.component }}
-          image: rkalluru/d77-{{ .Values.component }}
-          imagePullPolicy: Always
+          image: {{ .Values.containers.main.image }}
+          imagePullPolicy: {{ .Values.containers.main.imagePullPolicy }}
           volumeMounts:
           - mountPath: /parameters
             name: parameters
