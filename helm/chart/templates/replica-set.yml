@@ -28,7 +28,7 @@ spec:
           volumeMounts:
           {{- with .Values.volumeMounts }}
             - mountPath: /{{ . }}
-              name: {{ . }}
+              name: {{ . | quote }}
           {{- end }}
 
 
