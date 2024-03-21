@@ -14,6 +14,6 @@ containers:
     imagePullPolicy: Always
 
 volumeMounts:
-  - parameters: /parameters
+  parameters: /parameters
 
 
