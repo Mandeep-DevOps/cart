@@ -17,3 +17,9 @@ volumeMounts:
   /parameters: parameters
 
 
+volumeMounts1:
+  - mountPath: parameters
+    name: /parameters
+
+
+

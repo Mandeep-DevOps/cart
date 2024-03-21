@@ -26,10 +26,7 @@ spec:
               memory: "150Mi"
               cpu: "100m"
           volumeMounts:
-          {{- range $k, $v := .Values.volumeMounts }}
-            - mountPath: {{ $k }}
-              name: {{ $v }}
-          {{- end }}
+            {{- toYaml .Values.volumeMounts1 | nindent 30 }}
 
 
           env:
