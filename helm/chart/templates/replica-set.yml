@@ -17,7 +17,7 @@ spec:
       initContainers:
         - name: parameters-pull
           image: {{ .Values.initContainers.parameters_pull.image }}
-          imagePullPolicy: {{ .Values.initContainers.parameters-pull.imagePullPolicy }}
+          imagePullPolicy: {{ .Values.initContainers.parameters_pull.imagePullPolicy }}
           resources:
             requests:
               memory: "100Mi"
