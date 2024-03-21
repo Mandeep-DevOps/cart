@@ -13,5 +13,6 @@ containers:
     image: rkalluru/d77-cart
     imagePullPolicy: Always
 
-
-
+volumeMounts:
+  - mountPath: /parameters
+    name: parameters

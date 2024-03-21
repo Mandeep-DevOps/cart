@@ -26,8 +26,9 @@ spec:
               memory: "150Mi"
               cpu: "100m"
           volumeMounts:
-          - mountPath: /parameters
-            name: parameters
+          {{- with .Values.volumeMounts }}
+          - {{ . }}
+          {{- end }}
           env:
             - name: PARAMS
               value: {{ .Values.PARAMS }}
