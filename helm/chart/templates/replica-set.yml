@@ -27,7 +27,7 @@ spec:
               cpu: "100m"
           volumeMounts:
           {{- range $k, $v := .Values.volumeMounts }}
-            - mountPath: /{{ $k }}
+            - mountPath: {{ $k }}
               name: {{ $v }}
           {{- end }}
 
