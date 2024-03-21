@@ -30,7 +30,7 @@ spec:
             name: parameters
           env:
             - name: PARAMS
-              value: {{ .Values.PARAMS }
+              value: {{ .Values.PARAMS }}
       containers:
         - name: {{ .Values.component }}
           image: rkalluru/d77-{{ .Values.component }}
