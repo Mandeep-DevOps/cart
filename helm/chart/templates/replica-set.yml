@@ -27,7 +27,7 @@ spec:
               cpu: "100m"
           volumeMounts:
             {{- with .Values.volumeMounts }}
-              - {{ . }}
+              - {{ . |indent 30}}
             {{- end }}
           env:
             - name: PARAMS
