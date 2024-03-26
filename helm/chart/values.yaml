@@ -20,5 +20,4 @@ volumeMounts:
 volumeMounts1:
   - mountPath: parameters
     name: /parameters
-  - mountPath: test
-    name: /xyz
+
