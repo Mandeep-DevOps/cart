@@ -5,8 +5,9 @@ pipeline {
     }
   }
   stages {
-    when { not { branch 'main' } }
+
     stage('Unit Tests') {
+      when { not { branch 'main' } }
       steps {
         echo 'OK'
       }
