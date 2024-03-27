@@ -5,19 +5,57 @@ pipeline {
     }
   }
   stages {
-    stage('Docker build') {
+
+    stage('Unit Tests') {
+      when { not { branch 'main' } }
       steps {
-        sh 'docker build -t docker.io/rkalluru/d77-cart .'
+        echo 'OK'
       }
     }
 
-    stage('Docker Push') {
+    stage('Integration Tests') {
+      when { not { branch 'main' } }
       steps {
-        sh 'docker push docker.io/rkalluru/d77-cart'
+        echo 'OK'
+      }
+    }
+
+    stage('Code Quality') {
+      when { not { branch 'main' } }
+      steps {
+        echo 'OK'
+      }
+    }
+
+    stage('SAST') {
+      when { not { branch 'main' } }
+      steps {
+        echo 'OK'
+      }
+    }
+
+    stage('SCA') {
+      when { not { branch 'main' } }
+      steps {
+        echo 'OK'
+      }
+    }
+
+    stage('SECRET Detection') {
+      when { not { branch 'main' } }
+      steps {
+        echo 'OK'
+      }
+    }
+
+    stage('Artifact Produce') {
+      when { not { branch 'main' } }
+      steps {
+        echo 'OK'
       }
     }
 
   }
 }
 
-//
+// 1
