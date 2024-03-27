@@ -1,34 +1,52 @@
-node('workstation') {
-
-    stage('Unit Tests') {
-        echo 'OK'
-    }
-
-    stage('Integration Tests') {
-        echo 'OK'
-        sh 'env'
-    }
-
-    stage('Code Quality') {
-        echo 'OK'
-    }
-
-    stage('SAST') {
-        echo 'OK'
-    }
-
-    stage('SCA') {
-        echo 'OK'
-    }
-
-    stage('SECRET Detection') {
-        echo 'OK'
-    }
-
-    stage('Artifact Produce') {
-        echo 'OK'
-    }
-
+def unitTests() {
+  stage('Unit Tests') {
+    echo 'OK'
   }
+}
 
-// 1
+def integrationTests() {
+  stage('Integration Tests') {
+    echo 'OK'
+  }
+}
+
+def codeQuality() {
+  stage('Code Quality') {
+    echo 'OK'
+  }
+}
+
+def sast() {
+  stage('SAST') {
+    echo 'OK'
+  }
+}
+
+def sca() {
+  stage('SCA') {
+    echo 'OK'
+  }
+}
+
+def secretDetection() {
+  stage('SECRET Detection') {
+    echo 'OK'
+  }
+}
+
+def artifactProduce() {
+  stage('SECRET Detection') {
+    echo 'OK'
+  }
+}
+
+node('workstation') {
+  if(env.BRANCH_NAME == 'main') {
+    echo 'Nothing to Do'
+  }
+  else if(env.BRANCH_NAME ==~ '.*') {
+    unitTests()
+    integrationTests()
+    codeQuality()
+  }
+}
