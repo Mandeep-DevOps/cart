@@ -29,7 +29,13 @@ pipeline {
     }
 
     stage('SAST') {
-      when { not { branch 'main' } }
+      when {
+        allOf {
+          not { branch 'main' }
+          expression { TAG_NAME ==~ ".*" }
+        }
+
+      }
       steps {
         echo 'OK'
       }
