@@ -3,7 +3,7 @@
 node('workstation') {
   if(env.BRANCH_NAME == 'main') {
     echo 'Nothing to Do'
-    sast()
+    common.sast()
   }
   else if (env.TAG_NAME ==~ '.*') {
     sast()
