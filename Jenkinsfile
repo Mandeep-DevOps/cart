@@ -1,4 +1,4 @@
-@Library('common-library') _
+@Library('central-library') _
 
 node('workstation') {
   if(env.BRANCH_NAME == 'main') {
