@@ -1,3 +1,5 @@
+@Library('common-library') _
+
 def unitTests() {
   stage('Unit Tests') {
     echo 'OK'
